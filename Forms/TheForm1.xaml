@@ -1,0 +1,61 @@
+<Window x:Class="WpfApp1.MainWindow"
+  xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+  xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+  xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+  xmlns:local="clr-namespace:WpfApp1"
+  mc:Ignorable="d"
+  Title="MainWindow" Height="570" Width="900">
+  <Grid>
+    <Grid.ColumnDefinitions>
+      <ColumnDefinition Width="1*" />
+      <ColumnDefinition Width="30" />
+      <ColumnDefinition Width="1*" />
+    </Grid.ColumnDefinitions>
+    <StackPanel Grid.Column="0" Orientation="Vertical" Margin="0,0,0,0">
+      <StackPanel Orientation="Vertical">
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+          <Label Content="Nombre del icono para identificarlo" Margin="5" />
+          <TextBox Width="150" TextAlignment="Center" Margin="5" />
+        </StackPanel>
+        <Label Content="Ruta completa" Margin="0" FontSize="9" HorizontalContentAlignment="Center" />
+        <Button Content="Selecciona un icono" Margin="5" />
+        <Grid>
+          <StackPanel Margin="20,0" Orientation="Vertical" HorizontalAlignment="Left">
+            <Label Content="Visualizar nuevo icono" />
+            <Separator />
+            <Image Source="{Binding}" Height="100" Width="100"></Image>
+            <Separator />
+          </StackPanel>
+          <StackPanel Margin="20,0" Orientation="Vertical" HorizontalAlignment="Right">
+            <Label Content="Visualizar de la lista" />
+            <Separator />
+            <Image Source="{Binding}" Height="100" Width="100"></Image>
+            <Separator />
+          </StackPanel>
+        </Grid>
+      </StackPanel>
+      <StackPanel>
+        <DataGrid Height="300"></DataGrid>
+        <Button Content="Visualizar icono un icono" Margin="5" />
+      </StackPanel>
+    </StackPanel>
+    <StackPanel Grid.Column="2" Orientation="Vertical">
+      <Label Content="Lista de carpetas" HorizontalAlignment="Center"></Label>
+      <DataGrid Height="300"></DataGrid>
+      <StackPanel Orientation="Horizontal">
+        <Button Content="Eliminar" Margin="5" />
+        <Button Content="Cambiar icono" Margin="5" />
+      </StackPanel>
+
+      <StackPanel Margin="20,0" Orientation="Vertical" HorizontalAlignment="Center">
+        <Separator />
+        <Image Source="{Binding}" Height="100" Width="100"></Image>
+        <Separator />
+        <Label Content="Visualizar icono" />
+        <Separator />
+      </StackPanel>
+    </StackPanel>
+
+  </Grid>
+</Window>
